@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 
-const Form = () => {
-    const [busqueda, setBusqueda] = useState({
-        ciudad: "",
-        pais: ""
-    });
+const Form = ({ busqueda, setBusqueda, consulta, setConsulta }) => {
     const [error, setError] = useState(false);
 
     const { ciudad, pais } = busqueda;
@@ -28,6 +24,7 @@ const Form = () => {
         setError(false);
 
         // Pasarlo al App
+        setConsulta(!consulta);
     };
 
     return (
