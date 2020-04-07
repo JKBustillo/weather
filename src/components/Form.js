@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Error from './Error';
+import PropTypes from 'prop-types';
 
 const Form = ({ busqueda, setBusqueda, consulta, setConsulta }) => {
     const [error, setError] = useState(false);
@@ -69,5 +70,12 @@ const Form = ({ busqueda, setBusqueda, consulta, setConsulta }) => {
         </form>
     );
 }
- 
+
+Form.propTypes = {
+    busqueda: PropTypes.object.isRequired,
+    setBusqueda: PropTypes.func.isRequired,
+    consulta: PropTypes.bool.isRequired,
+    setConsulta: PropTypes.func.isRequired,
+};
+
 export default Form;
